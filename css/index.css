@@ -134,14 +134,15 @@ html,
 body {
   height: 100%;
   font-size: 62.5%;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', 'Arial', 'sans-serif';
 }
 body {
   font-size: 1.8rem;
 }
 .container {
   width: 80rem;
-  margin: 2rem auto 0;
+  margin: 0 auto;
+  padding-top: 2rem;
 }
 .container p {
   margin: 1rem 0;
@@ -152,6 +153,7 @@ body {
 }
 .container header .title {
   margin-top: 5px;
+  font-weight: bold;
 }
 .container header nav {
   display: flex;
@@ -161,12 +163,44 @@ body {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
+.container header nav a {
+  text-decoration: none;
+  color: grey;
+}
 .container section {
   margin-top: 2rem;
+  margin-bottom: 4rem;
 }
 .container section h2 {
   font-size: 2.3rem;
   color: #29537D;
   text-transform: uppercase;
   font-weight: bold;
+  margin: 15px 0px;
+}
+.container section h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+}
+.container .skills p {
+  margin: 2rem 0;
+}
+.container .skills span {
+  background-color: #29537D;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.container .project {
+  margin-top: 15px;
+}
+.container .project ul {
+  margin: 0.5rem 0 0.5rem;
+  list-style-type: square;
+  list-style-position: inside;
+  line-height: 1.2;
+}
+.container .languages {
+  margin-bottom: 0;
 }
