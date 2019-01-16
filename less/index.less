@@ -53,9 +53,21 @@ table {
   box-sizing: border-box;
 }
 
+// variables
 @headercolor: #29537D;
 @namecolor: darkred;
 @fontstack: 'Roboto', 'Arial', 'sans-serif';
+
+// mixins
+.evenflex() {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.yell() {
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
 html, body {
   height: 100%;
@@ -88,12 +100,11 @@ body {
     }
 
     nav {
-      display: flex;
-      justify-content: space-evenly;
       margin-top: 2rem;
       padding: 1.6rem 0;
       border-top: 1px solid black;
       border-bottom: 1px solid black;
+      .evenflex;
 
       a {
         text-decoration: none;
@@ -109,9 +120,8 @@ body {
     h2 {
       font-size: 2.3rem;
       color: @headercolor;
-      text-transform: uppercase;
-      font-weight: bold;
       margin: 15px 0px;
+      .yell;
     }
 
     h3 {
@@ -146,5 +156,9 @@ body {
 
   .languages {
     margin-bottom: 0;
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
   }
 }

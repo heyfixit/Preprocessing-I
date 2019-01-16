@@ -156,12 +156,12 @@ body {
   font-weight: bold;
 }
 .container header nav {
-  display: flex;
-  justify-content: space-evenly;
   margin-top: 2rem;
   padding: 1.6rem 0;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-evenly;
 }
 .container header nav a {
   text-decoration: none;
@@ -174,9 +174,9 @@ body {
 .container section h2 {
   font-size: 2.3rem;
   color: #29537D;
-  text-transform: uppercase;
-  font-weight: bold;
   margin: 15px 0px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .container section h3 {
   font-size: 2rem;
@@ -203,4 +203,9 @@ body {
 }
 .container .languages {
   margin-bottom: 0;
+}
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
 }
