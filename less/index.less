@@ -1,8 +1,8 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+ */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -13,47 +13,152 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// variables
+@headercolor: #29537D;
+@namecolor: darkred;
+@fontstack: 'Roboto', 'Arial', 'sans-serif';
+
+// mixins
+.evenflex() {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.yell() {
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 html, body {
-    height: 100%;
+  height: 100%;
+  font-size: 62.5%;
+  font-family: @fontstack;
 }
 
+body {
+  font-size: 1.8rem;
+}
+
+.container {
+  width: 80rem;
+  margin: 0 auto;
+  padding-top: 2rem;
+
+  p {
+    margin: 1rem 0;
+  }
+
+  header {
+    h1 {
+      font-size: 4rem;
+      color: @namecolor;
+    }
+
+    .title {
+      margin-top: 5px;
+      font-weight: bold;
+    }
+
+    nav {
+      margin-top: 2rem;
+      padding: 1.6rem 0;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      .evenflex;
+
+      a {
+        text-decoration: none;
+        color: grey;
+      }
+    }
+  }
+
+  section {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+
+    h2 {
+      font-size: 2.3rem;
+      color: @headercolor;
+      margin: 15px 0px;
+      .yell;
+    }
+
+    h3 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: black;
+    }
+  }
+
+  .skills {
+    p {
+      margin: 2rem 0;
+    }
+
+    span {
+      background-color: @headercolor;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+    }
+  }
+
+  .project {
+    margin-top: 15px;
+    ul {
+      margin: 0.5rem 0 0.5rem;
+      list-style-type: square;
+      list-style-position: inside;
+      line-height: 1.2;
+    }
+  }
+
+  .languages {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+}
