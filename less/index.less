@@ -59,6 +59,11 @@ table {
 @fontstack: 'Roboto', 'Arial', 'sans-serif';
 
 // mixins
+.betweenflex() {
+  display: flex;
+  justify-content: space-between;
+}
+
 .evenflex() {
   display: flex;
   justify-content: space-evenly;
@@ -80,7 +85,7 @@ body {
 }
 
 .container {
-  width: 80rem;
+  max-width: 80rem;
   margin: 0 auto;
   padding-top: 2rem;
 
@@ -99,17 +104,26 @@ body {
       color: @namecolor;
     }
 
+    @media (max-width: 500px) {
+      h1, .title {
+        text-align: center;
+      }
+
+      .introduction {
+        margin-top: 2rem;
+      }
+    }
+
     .title {
       margin-top: 5px;
       font-weight: bold;
     }
 
     nav {
-      margin-top: 2rem;
       padding: 1.6rem 0;
       border-top: 1px solid black;
       border-bottom: 1px solid black;
-      .evenflex;
+      .betweenflex;
 
       @media (max-width: 500px) {
         flex-direction: column;
@@ -119,6 +133,11 @@ body {
       a {
         text-decoration: none;
         color: grey;
+
+        i {
+          color: @headercolor;
+        }
+
         @media (max-width: 500px) {
           padding: 1rem;
         }
@@ -146,10 +165,7 @@ body {
 
   .skills {
     p {
-      margin: 2rem 0;
-      @media (max-width: 500px) {
-        line-height: 2;
-      }
+      line-height: 2;
     }
 
     span {
@@ -165,13 +181,46 @@ body {
     ul {
       margin: 0.5rem 0 0.5rem;
       list-style-type: square;
-      list-style-position: inside;
+      list-style-position: outside;
       line-height: 1.2;
+      margin-left: 1.8rem;
     }
   }
 
   .languages {
     margin-bottom: 0;
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+    }
+  }
+
+  img.rounded {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+    border: 5px solid @headercolor;
+  }
+
+  .cropped {
+    @media (max-width: 500px) {
+      order: -1;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .left {
+    @media (max-width: 500px) {
+      margin-top: 2rem;
+    }
   }
 
 }

@@ -140,7 +140,7 @@ body {
   font-size: 1.8rem;
 }
 .container {
-  width: 80rem;
+  max-width: 80rem;
   margin: 0 auto;
   padding-top: 2rem;
 }
@@ -157,17 +157,25 @@ body {
   font-size: 4rem;
   color: darkred;
 }
+@media (max-width: 500px) {
+  .container header h1,
+  .container header .title {
+    text-align: center;
+  }
+  .container header .introduction {
+    margin-top: 2rem;
+  }
+}
 .container header .title {
   margin-top: 5px;
   font-weight: bold;
 }
 .container header nav {
-  margin-top: 2rem;
   padding: 1.6rem 0;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 @media (max-width: 500px) {
   .container header nav {
@@ -178,6 +186,9 @@ body {
 .container header nav a {
   text-decoration: none;
   color: grey;
+}
+.container header nav a i {
+  color: #29537D;
 }
 @media (max-width: 500px) {
   .container header nav a {
@@ -201,12 +212,7 @@ body {
   color: black;
 }
 .container .skills p {
-  margin: 2rem 0;
-}
-@media (max-width: 500px) {
-  .container .skills p {
-    line-height: 2;
-  }
+  line-height: 2;
 }
 .container .skills span {
   background-color: #29537D;
@@ -220,9 +226,39 @@ body {
 .container .project ul {
   margin: 0.5rem 0 0.5rem;
   list-style-type: square;
-  list-style-position: inside;
+  list-style-position: outside;
   line-height: 1.2;
+  margin-left: 1.8rem;
 }
 .container .languages {
   margin-bottom: 0;
+}
+.container .top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+@media (max-width: 500px) {
+  .container .top {
+    flex-direction: column;
+  }
+}
+.container img.rounded {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 15rem;
+  height: 15rem;
+  border: 5px solid #29537D;
+}
+@media (max-width: 500px) {
+  .container .cropped {
+    order: -1;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (max-width: 500px) {
+  .container .left {
+    margin-top: 2rem;
+  }
 }
