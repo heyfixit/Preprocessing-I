@@ -147,6 +147,12 @@ body {
 .container p {
   margin: 1rem 0;
 }
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+    padding: 1rem;
+  }
+}
 .container header h1 {
   font-size: 4rem;
   color: darkred;
@@ -163,9 +169,20 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
+@media (max-width: 500px) {
+  .container header nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .container header nav a {
   text-decoration: none;
   color: grey;
+}
+@media (max-width: 500px) {
+  .container header nav a {
+    padding: 1rem;
+  }
 }
 .container section {
   margin-top: 2rem;
@@ -186,6 +203,11 @@ body {
 .container .skills p {
   margin: 2rem 0;
 }
+@media (max-width: 500px) {
+  .container .skills p {
+    line-height: 2;
+  }
+}
 .container .skills span {
   background-color: #29537D;
   color: white;
@@ -203,9 +225,4 @@ body {
 }
 .container .languages {
   margin-bottom: 0;
-}
-@media (max-width: 500px) {
-  .container {
-    width: 100%;
-  }
 }
